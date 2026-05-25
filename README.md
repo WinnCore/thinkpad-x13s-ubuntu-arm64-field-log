@@ -1,93 +1,53 @@
 # ThinkPad X13s Gen 1 Ubuntu ARM64 Field Log
 
-A field log for running Ubuntu on a Lenovo ThinkPad X13s Gen 1 ARM64 / Snapdragon laptop.
+> A practical field log documenting the architecture, stability, and quirks of running Ubuntu on the Qualcomm Snapdragon SC8280XP platform.
 
-This is not a universal Linux install guide. It is a record of real problems, workarounds, warnings, and lessons from one ARM64 laptop setup.
+## Project Purpose
 
-## Why This Exists
-
-ARM64 laptops do not behave like normal Intel/AMD Linux laptops.
-
-On this platform, success depends on:
-
-- exact laptop model
-- Qualcomm firmware support
-- kernel version
-- Ubuntu version
-- suspend and sleep-state behavior
-- GPU/browser rendering path
-- package repository architecture support
-- desktop environment behavior
-
-Most generic Linux advice assumes x86_64. This repo documents what actually happened on this machine.
+This repository documents real troubleshooting work on a ThinkPad X13s Gen 1 running Ubuntu on ARM64. It is not a universal install guide. It is a technical field log documenting what works, what breaks, and how the Linux kernel interacts with this specific mobile architecture.
 
 ## Machine Class
 
 | Item | Value |
 |---|---|
-| Laptop | Lenovo ThinkPad X13s Gen 1 |
-| Architecture | ARM64 / aarch64 |
-| Platform | Qualcomm Snapdragon |
-| OS | Ubuntu |
-| Focus | Stability, suspend, freezes, firmware warnings, graphics issues, package compatibility |
+| **Device family** | Lenovo ThinkPad X13s Gen 1 |
+| **Architecture** | ARM64 / aarch64 |
+| **Platform** | Qualcomm Snapdragon (SC8280XP / 8cx Gen 3) |
+| **Operating system** | Ubuntu Linux |
 
-## Main Problem Areas
+## Repository Index
 
-1. Random freezes and hard shutdown-like crashes
-2. GNOME / systemd suspend conflict
-3. Qualcomm power-management and firmware warnings
-4. Firefox / Discord graphics instability
-5. GLib / `LD_LIBRARY_PATH` breakage
-6. Flatpak shared-library failure
-7. Ghidra HiDPI launcher setup
-8. APT repository compatibility on Ubuntu ARM64
-9. KVM / virtualization limitations
-10. Internal WiFi limitations for security testing
+### Core Documentation
+- [Problems & Fixes Matrix](PROBLEMS_AND_FIXES.md)
+- [System Rebuild Checklist](docs/rebuild-checklist.md)
+- [Privacy & Redaction Process](docs/privacy-redaction-process.md)
 
-## Repo Map
+### Hardware & Architecture Notes
+- [Device Tree (DTB) Extraction](docs/device-tree-notes.md)
+- [Thermal & Battery Baseline](docs/thermal-battery-baseline-notes.md)
+- [Known Kernel & Firmware Warnings](docs/known-kernel-warnings.md)
 
-```text
-PROBLEMS_AND_FIXES.md
-docs/
-  power-suspend-freeze-notes.md
-  graphics-firefox-discord-notes.md
-  ld-library-path-glib-notes.md
-  known-kernel-warnings.md
-  package-repository-notes.md
-  virtualization-notes.md
-fixes/
-  disable-suspend-logind-dropin.md
-  firefox-discord-software-rendering.md
-  flatpak-libglib-error.md
-  ghidra-hidpi-launcher.md
-  apt-repository-cleanup.md
-scripts/
-  audit-redaction.sh
-  collect-safe-system-info.sh
-system-snapshots/
-  redacted snapshots only
-```
+### Stability & Subsystem Investigations
+- [Power, Suspend, and Freeze Notes](docs/power-suspend-freeze-notes.md)
+- [Graphics, Firefox, and Discord Notes](docs/graphics-firefox-discord-notes.md)
+- [LD_LIBRARY_PATH and GLib Notes](docs/ld-library-path-glib-notes.md)
+- [Package Repository Compatibility](docs/package-repository-notes.md)
+- [Virtualization on ARM64](docs/virtualization-notes.md)
 
-## Privacy Rule
+### Project Administration
+- [Contributing Guidelines](CONTRIBUTING.md)
+- [Acknowledgments](ACKNOWLEDGMENTS.md)
+- [Credits](CREDITS.md)
 
-Before publishing logs, redact:
-
-- usernames
-- hostnames
-- emails
-- serial numbers
-- machine IDs
-- MAC addresses
-- IP addresses
-- WiFi SSIDs
-- tokens or keys
-
-Run:
+## Quick Diagnostic Commands
 
 ```bash
-./scripts/audit-redaction.sh .
+lscpu
+uname -a
+journalctl -b -p err --no-pager
+sudo dmesg | grep -iE "qcom|qualcomm|snapdragon|firmware|pmic|glink|gpu|drm|wifi|suspend|error"
 ```
 
-## Status
+## Important Warning
 
-This repo is a working field log. Some issues are understood well enough to document as workarounds. Others are still observed warnings that need more testing before calling them root causes.
+Do not blindly apply fixes from this repository to other machines. ARM64 laptop support depends heavily on the exact machine, firmware, kernel version, and Qualcomm driver support.
