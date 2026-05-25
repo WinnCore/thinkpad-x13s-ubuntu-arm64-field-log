@@ -1,0 +1,15 @@
+private/
+private-do-not-publish/
+*.bak
+*.tmp
+*.raw
+*.tar
+*.zip
+*.7z
+dpkg-installed.txt
+*dpkg-installed*
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+.DS_Store

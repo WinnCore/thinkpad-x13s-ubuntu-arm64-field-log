@@ -1,0 +1,359 @@
+===== FWUPD DEVICES =====
+Idle…: 0%
+LENOVO 21BYS03Y00
+│
+├─hid-over-i2c 04F3:3193:
+│     Device ID:          7f9b0a2aff8e60d199112bf5dfcae38702488507
+│     Current version:    0x0005
+│     Bootloader Version: 0x0002
+│     Vendor:             Elan (HIDRAW:0x04F3)
+│     GUIDs:              UUID_REDACTED ← HIDRAW\VEN_04F3&DEV_3193
+│                         UUID_REDACTED ← HIDRAW\VEN_04F3&DEV_3193&MOD_0004
+│                         UUID_REDACTED ← ELANTP\ICTYPE_14&MOD_0004
+│                         UUID_REDACTED ← ELANTP\ICTYPE_14&MOD_0004&DRIVER_HID
+│     Device Flags:       • Internal device
+│                         • Updatable
+│                         • Unsigned Payload
+│                         • Can tag for emulation
+│   
+├─Prometheus:
+│ │   Device ID:          813b4757e78d708603a80ead0a2b6ef1364b7790
+│ │   Summary:            Fingerprint reader
+│ │   Current version:    10.01.3333223
+│ │   Vendor:             Synaptics (USB:0x06CB)
+│ │   Install Duration:   2 seconds
+│ │   Serial Number:      SERIAL_REDACTED
+│ │   GUID:               UUID_REDACTED ← USB\VID_06CB&PID_00FC
+│ │   Device Flags:       • Updatable
+│ │                       • Supported on remote server
+│ │                       • Cryptographic hash verification is available
+│ │                       • Signed Payload
+│ │                       • Can tag for emulation
+│ │ 
+│ └─Prometheus (IOTA Config):
+│       Device ID:        ca97cb30772ed270b1ee598725919dc80e1d28d3
+│       Summary:          Fingerprint reader config
+│       Current version:  0007
+│       Minimum Version:  0007
+│       Vendor:           Synaptics (USB:0x06CB)
+│       GUID:             UUID_REDACTED ← USB\VID_06CB&PID_00FC-cfg
+│       Device Flags:     • Updatable
+│                         • Only version upgrades are allowed
+│                         • Signed Payload
+│     
+├─Qualcomm Snapdragon X55 5G:
+│     Device ID:          d2e561bcb121240c876b519064584be37e112ead
+│     Summary:            Foxconn T99W175 5G modem
+│     Current version:    T99W175.F0.IPV4_REDACTED.AT.011.057
+│     Vendor:             foxconn (PCI:0x105B)
+│     Problems:           [31m[1m• Device requires AC power to be connected[0m
+│     GUIDs:              UUID_REDACTED ← PCI\VID_105B&PID_E0C3
+│                         UUID_REDACTED ← PCI\VID_105B&PID_E0C3&REV_0000
+│                         UUID_REDACTED ← PCI\VID_105B&PID_E0C3&CARRIER_ATT
+│                         UUID_REDACTED ← PCI\VID_105B&PID_E0C3&REV_0000&CARRIER_ATT
+│     Device Flags:       • System requires external power source
+│                         • Updatable
+│                         • Unsigned Payload
+│                         • Can tag for emulation
+│   
+├─System Firmware:
+│ │   Device ID:          b3f2723a04671a24bdf2d087cf9da60dcf5cb886
+│ │   Summary:            UEFI System Resource Table device (Updated via capsule-on-disk)
+│ │   Current version:    222626144
+│ │   Minimum Version:    65536
+│ │   Vendor:             LENOVO (DMI:LENOVO)
+│ │   Update State:       Success
+│ │   Problems:           [31m[1m• Device requires AC power to be connected[0m
+│ │   GUID:               UUID_REDACTED
+│ │   Device Flags:       • Internal device
+│ │                       • System requires external power source
+│ │                       • Needs a reboot after installation
+│ │                       • Device is usable for the duration of the update
+│ │                       • Updatable
+│ │   Device Requests:    • Message
+│ │ 
+│ ├─UEFI Key Exchange Key:
+│ │ │   Device ID:        2a4c23bfb79b5dabe474cb7b1b3e604645d6f9c6
+│ │ │   Update Error:     [31m[1mgetting efivars free space is not supported[0m
+│ │ │   Device Flags:     • Internal device
+│ │ │ 
+│ │ ├─KEK CA:
+│ │ │     Device ID:      b7a1d3d90faa1f6275d9a98da4fb3be7118e61c7
+│ │ │     Current version: 2011
+│ │ │     Vendor:         Microsoft (UEFI:Microsoft)
+│ │ │     Update Error:   [31m[1mgetting efivars free space is not supported[0m
+│ │ │     GUIDs:          UUID_REDACTED ← UEFI\VENDOR_Microsoft&NAME_Microsoft-KEK-CA
+│ │ │                     UUID_REDACTED ← UEFI\CRT_9F402B1CC0243CBEDC58A525789816CCCA7687A9
+│ │ │     Device Flags:   • Internal device
+│ │ │                     • Needs a reboot after installation
+│ │ │                     • Device is usable for the duration of the update
+│ │ │                     • Updatable
+│ │ │                     • Signed Payload
+│ │ │                     • Can tag for emulation
+│ │ │   
+│ │ └─KEK CA:
+│ │       Device ID:      1d7ed610471d175df43bc895f9bda7c47d8dae3c
+│ │       Current version: 2012
+│ │       Vendor:         Lenovo (UEFI:Lenovo)
+│ │       Update Error:   [31m[1mgetting efivars free space is not supported[0m
+│ │       GUIDs:          UUID_REDACTED ← UEFI\VENDOR_Lenovo&NAME_Lenovo-KEK-CA
+│ │                       UUID_REDACTED ← UEFI\CRT_FC8101E5585E1C8093A3BF0FEC728C6C22AB3C90
+│ │       Device Flags:   • Internal device
+│ │                       • Needs a reboot after installation
+│ │                       • Device is usable for the duration of the update
+│ │                       • Updatable
+│ │                       • Signed Payload
+│ │                       • Can tag for emulation
+│ │     
+│ ├─UEFI Signature Database:
+│ │ │   Device ID:        0352a8acc949c7df21fec16e566ba9a74e797a97
+│ │ │   Update Error:     [31m[1mgetting efivars free space is not supported[0m
+│ │ │   Device Flags:     • Internal device
+│ │ │ 
+│ │ ├─ThinkPad Product CA:
+│ │ │     Device ID:      a296b1dd86b8c548adbf0412d995e69e2154bfe5
+│ │ │     Current version: 2012
+│ │ │     Vendor:         Lenovo (UEFI:Lenovo)
+│ │ │     Update Error:   [31m[1mgetting efivars free space is not supported[0m
+│ │ │     GUIDs:          UUID_REDACTED ← UEFI\VENDOR_Lenovo&NAME_ThinkPad-Product-CA
+│ │ │                     UUID_REDACTED ← UEFI\CRT_373EE20565D7F1E05A19ABE0BE1278309068DE5E
+│ │ │     Device Flags:   • Internal device
+│ │ │                     • Needs a reboot after installation
+│ │ │                     • Updatable
+│ │ │                     • Signed Payload
+│ │ │                     • Can tag for emulation
+│ │ │   
+│ │ ├─UEFI CA:
+│ │ │     Device ID:      163c5a91853ab68fd09dd15bef3c13dc9a9c1d15
+│ │ │     Current version: 2014
+│ │ │     Vendor:         Lenovo (UEFI:Lenovo)
+│ │ │     Update Error:   [31m[1mgetting efivars free space is not supported[0m
+│ │ │     GUIDs:          UUID_REDACTED ← UEFI\VENDOR_Lenovo&NAME_Lenovo-UEFI-CA
+│ │ │                     UUID_REDACTED ← UEFI\CRT_DAD2D12C61D6878808FB095EB66C42752BCCE557
+│ │ │     Device Flags:   • Internal device
+│ │ │                     • Needs a reboot after installation
+│ │ │                     • Updatable
+│ │ │                     • Signed Payload
+│ │ │                     • Can tag for emulation
+│ │ │   
+│ │ └─Windows Production PCA:
+│ │       Device ID:      ad7e00ec37f005ae10492bdb7f73aef0d2e20488
+│ │       Current version: 2011
+│ │       Vendor:         Microsoft (UEFI:Microsoft)
+│ │       Update Error:   [31m[1mgetting efivars free space is not supported[0m
+│ │       GUIDs:          UUID_REDACTED ← UEFI\VENDOR_Microsoft&NAME_Microsoft-Windows-Production-PCA
+│ │                       UUID_REDACTED ← UEFI\CRT_1A8B6903D64CC9AD09D12FCB355663A458A09EF0
+│ │       Device Flags:   • Internal device
+│ │                       • Needs a reboot after installation
+│ │                       • Updatable
+│ │                       • Signed Payload
+│ │                       • Can tag for emulation
+│ │     
+│ └─UEFI dbx:
+│       Device ID:        362301da643102b9f38477387e2193e57abaa590
+│       Summary:          UEFI revocation database
+│       Current version:  20230501
+│       Minimum Version:  20230501
+│       Vendor:           Microsoft (UEFI:Microsoft)
+│       Install Duration: 1 second
+│       Update Error:     [31m[1mgetting efivars free space is not supported[0m
+│       GUIDs:            UUID_REDACTED ← UEFI\CRT_A9087D1044AD18F7A94916D284CBC01827CF23CD8F60B79072C9CAA1FEF4D649&ARCH_AA64
+│                         UUID_REDACTED ← UEFI\CRT_A1117F516A32CEFCBA3F2D1ACE10A87972FD6BBE8FE0D0B996E09E65D802A503&ARCH_AA64
+│       Device Flags:     • Internal device
+│                         • Needs a reboot after installation
+│                         • Device is usable for the duration of the update
+│                         • Updatable
+│                         • Only version upgrades are allowed
+│                         • Signed Payload
+│                         • Can tag for emulation
+│     
+├─UEFI Device Firmware:
+│     Device ID:          468ee88975f20438562e7e74df99d47abee8ca80
+│     Summary:            UEFI System Resource Table device (Updated via capsule-on-disk)
+│     Current version:    5
+│     Vendor:             DMI:LENOVO
+│     Update State:       Success
+│     Problems:           [31m[1m• Device requires AC power to be connected[0m
+│     GUID:               UUID_REDACTED
+│     Device Flags:       • Internal device
+│                         • System requires external power source
+│                         • Needs a reboot after installation
+│                         • Device is usable for the duration of the update
+│                         • Updatable
+│     Device Requests:    • Message
+│   
+├─UEFI Device Firmware:
+│     Device ID:          6f0c4a0cc2cd035c45fece35226e4aaafc449cd5
+│     Summary:            UEFI System Resource Table device (Updated via capsule-on-disk)
+│     Current version:    117572353
+│     Vendor:             DMI:LENOVO
+│     Update State:       Success
+│     Problems:           [31m[1m• Device requires AC power to be connected[0m
+│     GUID:               UUID_REDACTED
+│     Device Flags:       • Internal device
+│                         • System requires external power source
+│                         • Needs a reboot after installation
+│                         • Device is usable for the duration of the update
+│                         • Updatable
+│     Device Requests:    • Message
+│   
+└─WD PC SN740 SDDQMQD-512G-1201:
+      Device ID:          8665c2e2eeab90a8db053f08efcb1ac09cc811e7
+      Summary:            NVM Express solid state drive
+      Current version:    73117101
+      Vendor:             Sandisk (PCI:0x15B7)
+      Serial Number:      SERIAL_REDACTED
+      Problems:           [31m[1m• Device requires AC power to be connected[0m
+      GUIDs:              UUID_REDACTED ← NVME\VEN_15B7&DEV_5016
+                          UUID_REDACTED ← NVME\VEN_15B7&DEV_5016&SUBSYS_15B75016
+                          UUID_REDACTED ← WD PC SN740 SDDQMQD-512G-1201
+      Device Flags:       • Internal device
+                          • System requires external power source
+                          • Supported on remote server
+                          • Needs a reboot after installation
+                          • Device is usable for the duration of the update
+                          • Updatable
+                          • Signed Payload
+                          • Can tag for emulation
+    
+
+===== FWUPD UPDATES =====
+Idle…: 0%
+Devices with no available firmware updates:
+ • KEK CA
+ • KEK CA
+ • Qualcomm Snapdragon X55 5G
+ • System Firmware
+ • ThinkPad Product CA
+ • UEFI CA
+ • UEFI Device Firmware
+ • UEFI Device Firmware
+ • UEFI dbx
+ • Windows Production PCA
+ • hid-over-i2c 04F3:3193
+ • Prometheus (IOTA Config)
+LENOVO 21BYS03Y00
+│
+├─WD PC SN740 SDDQMQD-512G-1201:
+│ │   Device ID:          8665c2e2eeab90a8db053f08efcb1ac09cc811e7
+│ │   Summary:            NVM Express solid state drive
+│ │   Current version:    73117101
+│ │   Vendor:             Sandisk (PCI:0x15B7)
+│ │   Serial Number:      SERIAL_REDACTED
+│ │   Problems:           [31m[1m• Device requires AC power to be connected[0m
+│ │   GUIDs:              UUID_REDACTED ← NVME\VEN_15B7&DEV_5016
+│ │                       UUID_REDACTED ← NVME\VEN_15B7&DEV_5016&SUBSYS_15B75016
+│ │                       UUID_REDACTED ← WD PC SN740 SDDQMQD-512G-1201
+│ │   Device Flags:       • Internal device
+│ │                       • System requires external power source
+│ │                       • Supported on remote server
+│ │                       • Needs a reboot after installation
+│ │                       • Device is usable for the duration of the update
+│ │                       • Updatable
+│ │                       • Signed Payload
+│ │                       • Can tag for emulation
+│ │ 
+│ └─PC SN740 SSD Update:
+│       New version:      73122101
+│       Remote ID:        lvfs
+│       Release ID:       137242
+│       Summary:          PC SN740 NVMe SSD Firmware for Lenovo PC
+│       License:          Proprietary
+│       Size:             2.8 MB
+│       Created:          2026-03-04 00:00:00
+│       Urgency:          High
+│         Tested:         2026-05-09 00:00:00
+│         Distribution:   ubuntu 26.04
+│         Old version:    73117101
+│         Version[fwupd]: 2.1.1
+│         Tested:         2026-05-06 00:00:00
+│         Distribution:   ubuntu 24.04
+│         Old version:    73117101
+│         Version[fwupd]: 1.9.33
+│         Tested:         2026-04-02 00:00:00
+│         Distribution:   rhel 9.7
+│         Old version:    73117101
+│         Version[fwupd]: 1.9.31
+│         Tested:         2026-03-30 00:00:00
+│         Distribution:   rhel 9.7
+│         Old version:    73116101
+│         Version[fwupd]: 1.9.31
+│         Tested:         2026-03-30 00:00:00
+│         Distribution:   rhel 9.7
+│         Old version:    73117101
+│         Version[fwupd]: 1.9.31
+│         Tested:         2026-03-06 00:00:00
+│         Distribution:   ubuntu 24.04
+│         Old version:    73102101
+│         Version[fwupd]: 1.9.33
+│         Tested:         2026-03-06 00:00:00
+│         Distribution:   ubuntu 24.04
+│         Old version:    73110101
+│         Version[fwupd]: 1.9.33
+│         Tested:         2026-03-06 00:00:00
+│         Distribution:   ubuntu 24.04
+│         Old version:    73112101
+│         Version[fwupd]: 1.9.33
+│         Tested:         2026-03-06 00:00:00
+│         Distribution:   ubuntu 24.04
+│         Old version:    73116101
+│         Version[fwupd]: 1.9.33
+│         Tested:         2026-03-06 00:00:00
+│         Distribution:   ubuntu 24.04
+│         Old version:    73117101
+│         Version[fwupd]: 1.9.33
+│       Vendor:           Lenovo
+│       Release Flags:    • Trusted metadata
+│                         • Is upgrade
+│                         • Tested by trusted vendor
+│       Description:      
+│       Do NOT turn off your computer or remove the AC adapter while update is in progress. The computer shall be restarted after updating firmware completely. The device may not properly function until you shut down or reboot PC.
+│       
+│       [Support devices and firmware version] WD PC SN740 SDDQMQD-****-1001, WD PC SN740 SDDQMQE-****-1001,WD PC SN740 SDDQNQD-****-1001, WD PC SN740 SDDQNQD-****-1201, WD PC SN740 SDDQMQD-****-1201, WD PC SN740 SDDQMQE-****-1201, Firmware version 73102101, 73110101, 73116101, 73117101
+│       
+│       [Problem fixes] (1) Fixes auth try count handling by incrementing Tries on aborted transactions. (2) Blocks backward firmware updates to prevent exploitation of the auth try count issue. (3)Adds ScanFwd workaround to resume read relocation after repeated LPM entry/exit, preventing read disturb.
+│       
+│       [Support Product Scope] Lenovo ThinkPad, ThinkCentre, ThinkStation, IdeaCentre
+│       Checksum:         03dbe47f8e2b1263dfeb6046c76e93805a215b774515854b3af99dfedbad5820
+│     
+└─Prometheus:
+  │   Device ID:          813b4757e78d708603a80ead0a2b6ef1364b7790
+  │   Summary:            Fingerprint reader
+  │   Current version:    10.01.3333223
+  │   Vendor:             Synaptics (USB:0x06CB)
+  │   Install Duration:   2 seconds
+  │   Serial Number:      SERIAL_REDACTED
+  │   GUID:               UUID_REDACTED ← USB\VID_06CB&PID_00FC
+  │   Device Flags:       • Updatable
+  │                       • Supported on remote server
+  │                       • Cryptographic hash verification is available
+  │                       • Signed Payload
+  │                       • Can tag for emulation
+  │ 
+  └─Prometheus Fingerprint Reader Update:
+        New version:      10.01.3478575
+        Remote ID:        lvfs
+        Release ID:       10697
+        Summary:          Firmware for the Synaptics Prometheus Fingerprint Reader device
+        License:          Proprietary
+        Size:             425.5 kB
+        Created:          2021-06-09 00:00:00
+        Urgency:          Medium
+          Tested:         2023-07-11 00:00:00
+          Distribution:   ubuntu 22.04
+          Old version:    10.01.3333223
+          Version[fwupd]: 1.7.5
+          Tested:         2022-04-22 00:00:00
+          Distribution:   ubuntu 20.04
+          Old version:    10.01.3333223
+          Version[fwupd]: 1.7.5
+        Vendor:           Synaptics
+        Duration:         2 seconds
+        Release Flags:    • Trusted metadata
+                          • Is upgrade
+        Description:      
+        New features and enhancements:
+        
+        • Fix an authentication issue on FOP project.
+        Checksum:         ee5f74bef533bfc09e386462574dd18bf8e3bcddb301c833f349b8242bd867bb
+      

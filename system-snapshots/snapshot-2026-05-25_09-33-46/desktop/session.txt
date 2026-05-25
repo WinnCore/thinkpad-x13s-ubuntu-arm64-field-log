@@ -1,0 +1,25 @@
+===== SESSION ENVIRONMENT =====
+COLORTERM=truecolor
+DESKTOP_SESSION=ubuntu
+DISPLAY=:0
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+GNOME_SETUP_DISPLAY=:1
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/813c4051_f4f2_48f4_9ba9_c5eec76f892b
+GNOME_TERMINAL_SERVICE=:1.197
+SHELL=/bin/bash
+TERM=xterm-256color
+WAYLAND_DISPLAY=wayland-0
+XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
+XDG_CURRENT_DESKTOP=ubuntu:GNOME
+XDG_DATA_DIRS=/usr/share/ubuntu:/usr/share/gnome:/home/USER_REDACTED/.local/share/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+XDG_GREETER_DATA_DIR=/var/lib/lightdm/data/USER_REDACTED
+XDG_MENU_PREFIX=gnome-
+XDG_RUNTIME_DIR=/run/user/1000
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+XDG_SESSION_CLASS=user
+XDG_SESSION_DESKTOP=ubuntu
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+XDG_SESSION_TYPE=wayland
+
+===== GNOME VERSION =====
+GNOME Shell 49.0

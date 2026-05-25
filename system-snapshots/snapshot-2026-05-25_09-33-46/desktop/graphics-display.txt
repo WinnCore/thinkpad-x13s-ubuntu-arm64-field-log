@@ -1,0 +1,55 @@
+===== DRM DEVICES =====
+total 0
+drwxr-xr-x   3 root root        100 May 24 17:37 .
+drwxr-xr-x  19 root root       7240 May 25 06:07 ..
+drwxr-xr-x   2 root root         80 May 24 17:37 by-path
+crw-rw----+  1 root video  226,   1 May 24 17:37 card1
+crw-rw----+  1 root render 226, 128 May 24 17:37 renderD128
+
+===== GLXINFO =====
+name of display: :0
+display: :0  screen: 0
+direct rendering: Yes
+Extended renderer info (GLX_MESA_query_renderer):
+    Vendor: freedreno (0x5143)
+    Device: FD690 (0xffffffff)
+    Version: 25.2.8
+    Accelerated: yes
+    Video memory: 14687MB
+    Unified memory: yes
+    Preferred profile: core (0x1)
+    Max core profile version: 4.6
+    Max compat profile version: 4.6
+    Max GLES1 profile version: 1.1
+    Max GLES[23] profile version: 3.2
+Memory info (GL_ATI_meminfo):
+    VBO free memory - total: 14687 MB, largest block: 14687 MB
+    VBO free aux. memory - total: 0 MB, largest block: 0 MB
+    Texture free memory - total: 14687 MB, largest block: 14687 MB
+    Texture free aux. memory - total: 0 MB, largest block: 0 MB
+    Renderbuffer free memory - total: 14687 MB, largest block: 14687 MB
+    Renderbuffer free aux. memory - total: 0 MB, largest block: 0 MB
+Memory info (GL_NVX_gpu_memory_info):
+    Dedicated video memory: 14687 MB
+    Total available memory: 14687 MB
+    Currently available dedicated video memory: 14687 MB
+OpenGL vendor string: freedreno
+OpenGL renderer string: FD690
+OpenGL core profile version string: 4.6 (Core Profile) Mesa 25.2.8-0ubuntu0.25.10.1
+OpenGL core profile shading language version string: 4.60
+OpenGL core profile context flags: (none)
+OpenGL core profile profile mask: core profile
+
+OpenGL version string: 4.6 (Compatibility Profile) Mesa 25.2.8-0ubuntu0.25.10.1
+OpenGL shading language version string: 4.60
+OpenGL context flags: (none)
+OpenGL profile mask: compatibility profile
+
+OpenGL ES profile version string: OpenGL ES 3.2 Mesa 25.2.8-0ubuntu0.25.10.1
+OpenGL ES profile shading language version string: OpenGL ES GLSL ES 3.20
+
+
+===== WAYLAND/X11 SESSION =====
+XDG_SESSION_TYPE=wayland
+DESKTOP_SESSION=ubuntu
+XDG_CURRENT_DESKTOP=ubuntu:GNOME

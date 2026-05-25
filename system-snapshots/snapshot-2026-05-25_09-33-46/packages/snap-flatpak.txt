@@ -1,0 +1,34 @@
+===== SNAP LIST =====
+Name                       Version                         Rev    Tracking         Publisher       Notes
+amass                      3.11.3                          866    latest/stable    caffix          -
+aws-cli                    2.34.53                         2195   v2/stable        aws**           classic
+bare                       1.0                             5      latest/stable    canonical**     base
+chromium                   147.0.7727.116                  3422   latest/stable    canonical**     -
+clion                      2026.1.2                        456    latest/stable    jetbrains**     classic
+core                       16-2.61.4-20260225              17290  latest/stable    canonical**     core
+core22                     20260225                        2412   latest/stable    canonical**     base
+core24                     20260410                        1644   latest/stable    canonical**     base
+crackmapexec               v5.4.0-1355-gd8c50c8            276    latest/stable    jitpatro        -
+cups                       2.4.16-2                        1184   latest/stable    openprinting**  -
+desktop-security-center    0+git.f7325f8                   160    1/edge           canonical**     -
+enum4linux                 v0.9.1-19-gee106b7              67     latest/stable    jitpatro        -
+firefox                    151.0.1-1                       8363   latest/stable/…  mozilla**       -
+gnome-42-2204              0+git.837775c-sdk0+git.015db9a  245    latest/stable/…  canonical**     -
+gnome-46-2404              0+git.f1cd5fa-sdk0+git.ca9c59c  154    latest/stable    canonical**     -
+go                         1.26.2                          11122  latest/stable    canonical**     classic
+gtk-common-themes          0.1-81-g442e511                 1535   latest/stable/…  canonical**     -
+lxd                        5.21.4-aee7e08                  38779  5.21/stable      canonical**     -
+mesa-2404                  25.0.7-snap211                  1166   latest/stable    canonical**     -
+metasploit-framework       v6.4.126-dev                    2436   latest/stable    jitpatro        -
+prompting-client           0+git.33cd821                   221    1/stable/…       canonical**     -
+pycharm-community          2026.1.2                        619    latest/stable    jetbrains**     classic
+rustrover                  2026.1.2                        197    latest/stable    jetbrains**     classic
+rustscan                   2.4.1                           437    latest/stable    popey*          -
+snap-store                 0+git.10310e85                  1368   2/stable/…       canonical**     -
+snapd                      2.75.2+g342.39dd1f8             27317  latest/edge      canonical**     snapd
+snapd-desktop-integration  0.9                             363    latest/stable/…  canonical**     -
+thunderbird                140.10.2esr-2                   1105   latest/stable/…  canonical**     -
+webstorm                   2026.1.2                        620    latest/stable    jetbrains**     classic
+
+===== FLATPAK LIST =====
+flatpak not installed

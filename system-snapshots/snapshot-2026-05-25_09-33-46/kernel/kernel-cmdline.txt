@@ -1,0 +1,5 @@
+===== KERNEL VERSION =====
+6.17.0-22-generic
+
+===== KERNEL CMDLINE =====
+BOOT_IMAGE=/vmlinuz-6.17.0-22-generic root=/dev/mapper/ubuntu--vg-ubuntu--lv ro clk_ignore_unused pd_ignore_unused arm64.nopauth quiet splash crashkernel=2G-4G:320M,4G-32G:512M,32G-64G:1024M,64G-128G:2048M,128G-:4096M vt.handoff=7

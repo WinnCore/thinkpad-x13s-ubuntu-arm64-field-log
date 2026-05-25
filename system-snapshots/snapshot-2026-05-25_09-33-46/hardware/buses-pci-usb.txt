@@ -1,0 +1,31 @@
+===== LSPCI =====
+0002:00:00.0 PCI bridge [0604]: Qualcomm Technologies, Inc SC8280XP PCI Express Root Port [17cb:010e]
+	Kernel driver in use: pcieport
+0002:01:00.0 Non-Volatile memory controller [0108]: Sandisk Corp WD PC SN740 NVMe SSD 512GB (DRAM-less) [15b7:5016] (rev 01)
+	Subsystem: Sandisk Corp WD PC SN740 NVMe SSD 512GB (DRAM-less) [15b7:5016]
+	Kernel driver in use: nvme
+	Kernel modules: nvme
+0004:00:00.0 PCI bridge [0604]: Qualcomm Technologies, Inc SC8280XP PCI Express Root Port [17cb:010e]
+	Kernel driver in use: pcieport
+0004:01:00.0 Wireless controller [0d40]: Foxconn International, Inc. T99W175 5G Modem [Snapdragon X55] [105b:e0c3]
+	Subsystem: Foxconn International, Inc. T99W175 5G Modem [Snapdragon X55] [105b:e0c3]
+	Kernel driver in use: mhi-pci-generic
+	Kernel modules: mhi_pci_generic
+0006:00:00.0 PCI bridge [0604]: Qualcomm Technologies, Inc SC8280XP PCI Express Root Port [17cb:010e]
+	Kernel driver in use: pcieport
+0006:01:00.0 Network controller [0280]: Qualcomm Technologies, Inc QCNFA765 Wireless Network Adapter [17cb:1103] (rev 01)
+	Subsystem: Qualcomm Technologies, Inc Device [17cb:0108]
+	Kernel driver in use: ath11k_pci
+	Kernel modules: ath11k_pci
+
+===== LSUSB =====
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci-hcd/4p, 480M
+    ID 1d6b:0002 Linux Foundation 2.0 root hub
+    |__ Port 004: Dev 002, If 0, Class=Vendor Specific Class, Driver=[none], 12M
+        ID 06cb:00fc Synaptics, Inc. Prometheus Fingerprint Reader
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci-hcd/2p, 10000M
+    ID 1d6b:0003 Linux Foundation 3.0 root hub
+/:  Bus 003.Port 001: Dev 001, Class=root_hub, Driver=xhci-hcd/1p, 480M
+    ID 1d6b:0002 Linux Foundation 2.0 root hub
+/:  Bus 004.Port 001: Dev 001, Class=root_hub, Driver=xhci-hcd/1p, 10000M
+    ID 1d6b:0003 Linux Foundation 3.0 root hub

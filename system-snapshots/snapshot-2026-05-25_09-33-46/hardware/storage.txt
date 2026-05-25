@@ -1,0 +1,75 @@
+===== LSBLK =====
+NAME                        TYPE    SIZE FSTYPE      FSVER    LABEL MOUNTPOINTS                         MODEL
+loop0                       loop   13.3M squashfs    4.0            /snap/amass/866                     
+loop1                       loop   56.9M squashfs    4.0            /snap/aws-cli/2190                  
+loop2                       loop   58.3M squashfs    4.0            /snap/aws-cli/2195                  
+loop3                       loop      4K squashfs    4.0            /snap/bare/5                        
+loop4                       loop  182.2M squashfs    4.0            /snap/chromium/3415                 
+loop5                       loop  182.2M squashfs    4.0            /snap/chromium/3422                 
+loop6                       loop    1.8G squashfs    4.0            /snap/clion/440                     
+loop7                       loop    1.8G squashfs    4.0            /snap/clion/456                     
+loop8                       loop   92.9M squashfs    4.0            /snap/core/17288                    
+loop9                       loop   92.9M squashfs    4.0            /snap/core/17290                    
+loop10                      loop   68.9M squashfs    4.0            /snap/core22/2340                   
+loop11                      loop     69M squashfs    4.0            /snap/core22/2412                   
+loop12                      loop   61.9M squashfs    4.0            /snap/core24/1588                   
+loop13                      loop   61.9M squashfs    4.0            /snap/core24/1644                   
+loop14                      loop     54M squashfs    4.0            /snap/crackmapexec/276              
+loop15                      loop   47.9M squashfs    4.0            /snap/cups/1171                     
+loop16                      loop   46.6M squashfs    4.0            /snap/cups/1184                     
+loop17                      loop   48.7M squashfs    4.0            /snap/enum4linux/67                 
+loop18                      loop   19.9M squashfs    4.0            /snap/desktop-security-center/160   
+loop19                      loop   19.9M squashfs    4.0            /snap/desktop-security-center/156   
+loop20                      loop  235.9M squashfs    4.0            /snap/firefox/8363                  
+loop21                      loop  493.6M squashfs    4.0            /snap/gnome-42-2204/228             
+loop22                      loop  234.8M squashfs    4.0            /snap/firefox/8305                  
+loop23                      loop    503M squashfs    4.0            /snap/gnome-42-2204/245             
+loop24                      loop    614M squashfs    4.0            /snap/gnome-46-2404/147             
+loop25                      loop   55.2M squashfs    4.0            /snap/go/11102                      
+loop26                      loop  552.9M squashfs    4.0            /snap/gnome-46-2404/154             
+loop27                      loop   55.2M squashfs    4.0            /snap/go/11122                      
+loop28                      loop   91.7M squashfs    4.0            /snap/gtk-common-themes/1535        
+loop29                      loop  106.9M squashfs    4.0            /snap/lxd/38373                     
+loop30                      loop  174.6M squashfs    4.0            /snap/mesa-2404/1166                
+loop31                      loop  106.9M squashfs    4.0            /snap/lxd/38779                     
+loop32                      loop  358.6M squashfs    4.0            /snap/metasploit-framework/2436     
+loop35                      loop   17.5M squashfs    4.0            /snap/prompting-client/203          
+loop36                      loop  355.2M squashfs    4.0            /snap/metasploit-framework/2397     
+loop37                      loop    1.2G squashfs    4.0            /snap/pycharm-community/601         
+loop38                      loop   17.5M squashfs    4.0            /snap/prompting-client/221          
+loop39                      loop    1.2G squashfs    4.0            /snap/pycharm-community/619         
+loop40                      loop    1.2G squashfs    4.0            /snap/rustrover/183                 
+loop41                      loop    1.2G squashfs    4.0            /snap/rustrover/197                 
+loop42                      loop   14.8M squashfs    4.0            /snap/snap-store/1339               
+loop43                      loop    8.5M squashfs    4.0            /snap/rustscan/437                  
+loop44                      loop   14.9M squashfs    4.0            /snap/snap-store/1368               
+loop45                      loop   43.3M squashfs    4.0            /snap/snapd/27226                   
+loop47                      loop    1.1G squashfs    4.0            /snap/webstorm/620                  
+loop48                      loop    560K squashfs    4.0            /snap/snapd-desktop-integration/363 
+loop49                      loop  221.2M squashfs    4.0            /snap/thunderbird/1092              
+loop50                      loop  221.2M squashfs    4.0            /snap/thunderbird/1105              
+loop51                      loop    560K squashfs    4.0            /snap/snapd-desktop-integration/359 
+loop52                      loop    1.1G squashfs    4.0            /snap/webstorm/602                  
+loop53                      loop   43.4M squashfs    4.0            /snap/snapd/27317                   
+zram0                       disk    7.2G swap        1              [SWAP]                              
+nvme0n1                     disk  476.9G                                                                WD PC SN740 SDDQMQD-512G-1201
+├─nvme0n1p1                 part      1G vfat        FAT32          /boot/efi                           
+├─nvme0n1p2                 part      2G ext4        1.0            /boot                               
+└─nvme0n1p3                 part  473.9G crypto_LUKS 2                                                  
+  └─dm_crypt-0              crypt 473.9G LVM2_member LVM2 001                                           
+    └─ubuntu--vg-ubuntu--lv lvm   473.9G ext4        1.0            /                                   
+
+===== DF -H =====
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              1.5G  3.5M  1.5G   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv  466G  196G  247G  45% /
+tmpfs                              7.2G   12K  7.2G   1% /dev/shm
+tmpfs                              5.0M  8.0K  5.0M   1% /run/lock
+tmpfs                              1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs                              1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+tmpfs                              1.0M     0  1.0M   0% /run/credentials/systemd-cryptsetup@dm_crypt\x2d0.service
+/dev/nvme0n1p2                     2.0G  258M  1.6G  15% /boot
+tmpfs                              7.2G   18M  7.2G   1% /tmp
+/dev/nvme0n1p1                     1.1G   77M  997M   8% /boot/efi
+tmpfs                              1.5G  5.4M  1.5G   1% /run/user/1000
+tmpfs                              1.0M     0  1.0M   0% /run/credentials/getty@tty1.service

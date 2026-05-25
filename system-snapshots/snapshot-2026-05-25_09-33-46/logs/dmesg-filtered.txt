@@ -1,0 +1,245 @@
+===== DMESG QCOM / SNAPDRAGON / FIRMWARE / GPU / USB / CAMERA / WIFI =====
+[    0.000000] efi: RTPROP=0xffe89398 ACPI 2.0=0xffffd000 MEMATTR=0xfb117298 ESRT=0xfaf30b98 SMBIOS=0xffed1000 MOKvar=0xff71f000 TPMEventLog=0xfffca018 INITRD=0xef96d698 RNG=0xfffd4f18 MEMRESERVE=0xef96bc18 
+[    0.000000] OF: reserved mem: 0x000000008bf00000..0x000000008bf01fff (8 KiB) nomap non-reusable gpu-mem@8bf00000
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: [Firmware Bug]: failed to set PC mode: -3
+[    0.030155] thermal_sys: Registered thermal governor 'fair_share'
+[    0.030159] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.030161] thermal_sys: Registered thermal governor 'step_wise'
+[    0.030162] thermal_sys: Registered thermal governor 'user_space'
+[    0.030164] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.038472] /soc@0/phy@88eb000: Fixed dependency cycle(s) with /soc@0/usb@a6f8800/usb@a600000
+[    0.038625] /soc@0/phy@8903000: Fixed dependency cycle(s) with /soc@0/usb@a8f8800/usb@a800000
+[    0.038788] /soc@0/usb@a6f8800/usb@a600000: Fixed dependency cycle(s) with /soc@0/phy@88eb000
+[    0.038930] /soc@0/usb@a8f8800/usb@a800000: Fixed dependency cycle(s) with /soc@0/phy@8903000
+[    0.038974] /soc@0/cci@ac4c000/i2c-bus@1/camera@10: Fixed dependency cycle(s) with /soc@0/camss@ac5a000
+[    0.038994] /soc@0/camss@ac5a000: Fixed dependency cycle(s) with /soc@0/cci@ac4c000/i2c-bus@1/camera@10
+[    0.044470] /soc@0/phy@88eb000: Fixed dependency cycle(s) with /soc@0/usb@a6f8800/usb@a600000
+[    0.044947] /soc@0/phy@8903000: Fixed dependency cycle(s) with /soc@0/usb@a8f8800/usb@a800000
+[    0.045740] /soc@0/usb@a6f8800/usb@a600000: Fixed dependency cycle(s) with /soc@0/phy@88eb000
+[    0.046058] /soc@0/usb@a8f8800/usb@a800000: Fixed dependency cycle(s) with /soc@0/phy@8903000
+[    0.046387] /soc@0/cci@ac4c000/i2c-bus@1/camera@10: Fixed dependency cycle(s) with /soc@0/camss@ac5a000
+[    0.046581] /soc@0/cci@ac4c000/i2c-bus@1/camera@10: Fixed dependency cycle(s) with /soc@0/camss@ac5a000
+[    0.046614] /soc@0/camss@ac5a000: Fixed dependency cycle(s) with /soc@0/cci@ac4c000/i2c-bus@1/camera@10
+[    0.055518] /pmic-glink/connector@0: Fixed dependency cycle(s) with /soc@0/phy@88eb000
+[    0.055734] /pmic-glink/connector@0: Fixed dependency cycle(s) with /soc@0/usb@a6f8800/usb@a600000
+[    0.056029] /pmic-glink/connector@1: Fixed dependency cycle(s) with /soc@0/phy@8903000
+[    0.056326] /pmic-glink/connector@1: Fixed dependency cycle(s) with /soc@0/usb@a8f8800/usb@a800000
+[    0.057164] /pmic-glink/connector@0: Fixed dependency cycle(s) with /usb0-sbu-mux
+[    0.057538] /usb0-sbu-mux: Fixed dependency cycle(s) with /pmic-glink/connector@0
+[    0.057664] /pmic-glink/connector@1: Fixed dependency cycle(s) with /usb1-sbu-mux
+[    0.058208] /usb1-sbu-mux: Fixed dependency cycle(s) with /pmic-glink/connector@1
+[    0.060188] ACPI: Interpreter disabled.
+[    0.070293] usbcore: registered new interface driver usbfs
+[    0.070324] usbcore: registered new interface driver hub
+[    0.070339] usbcore: registered new device driver usb
+[    0.080057] pnp: PnP ACPI: disabled
+[    0.262550] simple-framebuffer simple-framebuffer.0: [drm] Registered 1 planes with drm panic
+[    0.262558] [drm] Initialized simpledrm 1.0.0 for simple-framebuffer.0 on minor 0
+[    0.268082] simple-framebuffer simple-framebuffer.0: [drm] fb0: simpledrmdrmfb frame buffer device
+[    0.615229] qcom_scm: convention: smc arm 64
+[    0.616537] qcom_scm firmware:scm: qseecom: found qseecom with version 0x1402000
+[    0.616895] qcom_qseecom qcom_qseecom: setting up client for qcom.tz.uefisecapp
+[    1.515209] qcom_pmic_glink pmic-glink: Failed to create device link (0x180) with supplier 8903000.phy for /pmic-glink/connector@1
+[    1.520423] platform a400000.usb: Adding to iommu group 6
+[    1.531495] platform 3d00000.gpu: Adding to iommu group 7
+[    1.540710] platform a600000.usb: Adding to iommu group 9
+[    1.541096] qcom_pmic_glink pmic-glink: Failed to create device link (0x180) with supplier a600000.usb for /pmic-glink/connector@0
+[    1.541106] /soc@0/phy@88eb000: Fixed dependency cycle(s) with /soc@0/usb@a6f8800/usb@a600000
+[    1.554801] /soc@0/usb@a6f8800/usb@a600000: Fixed dependency cycle(s) with /soc@0/phy@88eb000
+[    1.573744] /soc@0/camss@ac5a000: Fixed dependency cycle(s) with /soc@0/cci@ac4c000/i2c-bus@1/camera@10
+[    1.573784] /soc@0/cci@ac4c000/i2c-bus@1/camera@10: Fixed dependency cycle(s) with /soc@0/camss@ac5a000
+[    1.587747] platform a800000.usb: Adding to iommu group 10
+[    1.604876] qcom_pmic_glink pmic-glink: Failed to create device link (0x180) with supplier a800000.usb for /pmic-glink/connector@1
+[    1.616281] spmi_pmic_arb c440000.spmi: PMIC arbiter version v5 (0x50020000)
+[    1.625036] remoteproc remoteproc0: slpi is available
+[    1.648652] remoteproc remoteproc0: powering up slpi
+[    1.655747] remoteproc remoteproc0: Booting fw image qcom/sc8280xp/LENOVO/21BX/qcslpi8280.mbn, size 6234112
+[    1.663314] qcom_pmic_glink pmic-glink: Failed to create device link (0x180) with supplier 88eb000.phy for /pmic-glink/connector@0
+[    1.676338] remoteproc remoteproc1: adsp is available
+[    1.678782] qcom-pcie 1c20000.pcie: supply vdda not found, using dummy regulator
+[    1.679263] qcom-pcie 1c20000.pcie: host bridge /soc@0/pcie@1c20000 ranges:
+[    1.679283] qcom-pcie 1c20000.pcie:       IO 0x003c200000..0x003c2fffff -> 0x0000000000
+[    1.679292] qcom-pcie 1c20000.pcie:      MEM 0x003c300000..0x003dffffff -> 0x003c300000
+[    1.707702] remoteproc remoteproc2: cdsp is available
+[    1.722239] remoteproc remoteproc2: powering up cdsp
+[    1.726220] remoteproc remoteproc2: Booting fw image qcom/sc8280xp/LENOVO/21BX/qccdsp8280.mbn, size 3571712
+[    1.726644] remoteproc remoteproc1: powering up adsp
+[    1.739981] remoteproc remoteproc1: Booting fw image qcom/sc8280xp/LENOVO/21BX/qcadsp8280.mbn, size 14565740
+[    1.782573] qcom_pmic_glink pmic-glink: Failed to create device link (0x180) with supplier a600000.usb for /pmic-glink/connector@0
+[    1.793338] qcom-qmp-combo-phy 8903000.phy: phy initialization timed-out
+[    1.793380] phy phy-8903000.phy.1: phy init failed --> -110
+[    1.793407] dwc3 a800000.usb: error -ETIMEDOUT: failed to initialize core
+[    1.793426] dwc3 a800000.usb: probe with driver dwc3 failed with error -110
+[    1.795692] qcom-pcie 1c20000.pcie: iATU: unroll T, 8 ob, 8 ib, align 4K, limit 1024G
+[    1.833325] remoteproc remoteproc0: remote processor slpi is now up
+[    1.909311] remoteproc remoteproc2: remote processor cdsp is now up
+[    1.940984] remoteproc remoteproc1: remote processor adsp is now up
+[    1.996402] qcom-pcie 1c20000.pcie: PCIe Gen.3 x4 link up
+[    1.997061] qcom-pcie 1c20000.pcie: PCI host bridge to bus 0002:00
+[    2.047971] rtc-pm8xxx c440000.spmi:pmic@0:rtc@6100: registered as rtc0
+[    2.048018] rtc-pm8xxx c440000.spmi:pmic@0:rtc@6100: setting system clock to 2026-05-24T22:36:31 UTC (1779662191)
+[    2.057055] qcom-pcie 1c00000.pcie: supply vdda not found, using dummy regulator
+[    2.057488] qcom-pcie 1c10000.pcie: supply vdda not found, using dummy regulator
+[    2.065183] qcom-pcie 1c10000.pcie: host bridge /soc@0/pcie@1c10000 ranges:
+[    2.065206] qcom-pcie 1c10000.pcie:       IO 0x0034200000..0x00342fffff -> 0x0000000000
+[    2.065220] qcom-pcie 1c10000.pcie:      MEM 0x0034300000..0x0035ffffff -> 0x0034300000
+[    2.065335] qcom-pcie 1c00000.pcie: host bridge /soc@0/pcie@1c00000 ranges:
+[    2.065359] qcom-pcie 1c00000.pcie:       IO 0x0030200000..0x00302fffff -> 0x0000000000
+[    2.065364] xhci-hcd xhci-hcd.3.auto: new USB bus registered, assigned bus number 1
+[    2.065372] qcom-pcie 1c00000.pcie:      MEM 0x0030300000..0x0031ffffff -> 0x0030300000
+[    2.065679] xhci-hcd xhci-hcd.3.auto: new USB bus registered, assigned bus number 2
+[    2.065685] xhci-hcd xhci-hcd.3.auto: Host supports USB 3.1 Enhanced SuperSpeed
+[    2.065755] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.17
+[    2.065760] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.065763] usb usb1: Product: xHCI Host Controller
+[    2.065765] usb usb1: Manufacturer: Linux 6.17.0-22-generic xhci-hcd
+[    2.065767] usb usb1: SerialNumber: SERIAL_REDACTED
+[    2.065975] hub 1-0:1.0: USB hub found
+[    2.066275] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    2.066308] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.17
+[    2.066312] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.066315] usb usb2: Product: xHCI Host Controller
+[    2.066317] usb usb2: Manufacturer: Linux 6.17.0-22-generic xhci-hcd
+[    2.066319] usb usb2: SerialNumber: SERIAL_REDACTED
+[    2.066463] hub 2-0:1.0: USB hub found
+[    2.067336] xhci-hcd xhci-hcd.4.auto: new USB bus registered, assigned bus number 3
+[    2.069891] xhci-hcd xhci-hcd.4.auto: new USB bus registered, assigned bus number 4
+[    2.069895] xhci-hcd xhci-hcd.4.auto: Host supports USB 3.1 Enhanced SuperSpeed
+[    2.069945] usb usb3: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 6.17
+[    2.069948] usb usb3: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.069951] usb usb3: Product: xHCI Host Controller
+[    2.069953] usb usb3: Manufacturer: Linux 6.17.0-22-generic xhci-hcd
+[    2.069955] usb usb3: SerialNumber: SERIAL_REDACTED
+[    2.070120] hub 3-0:1.0: USB hub found
+[    2.070266] usb usb4: We don't know the algorithms for LPM for this host, disabling LPM.
+[    2.070299] usb usb4: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 6.17
+[    2.070302] usb usb4: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    2.070305] usb usb4: Product: xHCI Host Controller
+[    2.070307] usb usb4: Manufacturer: Linux 6.17.0-22-generic xhci-hcd
+[    2.070310] usb usb4: SerialNumber: SERIAL_REDACTED
+[    2.070453] hub 4-0:1.0: USB hub found
+[    2.074163] qcom,apr 3000000.remoteproc:glink-edge.adsp_apps.-1.-1: Adding APR/GPR dev: gprsvc:service:2:1
+[    2.074222] qcom,apr 3000000.remoteproc:glink-edge.adsp_apps.-1.-1: Adding APR/GPR dev: gprsvc:service:2:2
+[    2.091110] hwmon hwmon4: temp1_input not attached to any thermal zone
+[    2.091163] hwmon hwmon4: temp2_input not attached to any thermal zone
+[    2.091199] hwmon hwmon4: temp3_input not attached to any thermal zone
+[    2.179941] qcom-pcie 1c10000.pcie: iATU: unroll T, 8 ob, 8 ib, align 4K, limit 1024G
+[    2.179948] qcom-pcie 1c00000.pcie: iATU: unroll T, 8 ob, 8 ib, align 4K, limit 1024G
+[    2.275652] qcom-pcie 1c00000.pcie: PCIe Gen.2 x1 link up
+[    2.275818] qcom-pcie 1c00000.pcie: PCI host bridge to bus 0006:00
+[    2.308208] usb 1-4: new full-speed USB device number 2 using xhci-hcd
+[    2.379025] qcom-pcie 1c10000.pcie: PCIe Gen.3 x2 link up
+[    2.379391] qcom-pcie 1c10000.pcie: PCI host bridge to bus 0004:00
+[    2.432672] usb 1-4: New USB device found, idVendor=06cb, idProduct=00fc, bcdDevice= 0.00
+[    2.432685] usb 1-4: New USB device strings: Mfr=0, Product=0, SerialNumber=1
+[    2.432691] usb 1-4: SerialNumber: SERIAL_REDACTED
+[    2.567612] adreno 3d00000.gpu: supply vdd not found, using dummy regulator
+[    2.567665] adreno 3d00000.gpu: supply vddcx not found, using dummy regulator
+[    2.574067] msm_dpu ae01000.display-controller: bound 3d00000.gpu (ops a3xx_ops [msm])
+[    2.600564] [drm:dpu_kms_hw_init:1173] dpu hardware revision:0x80000000
+[    2.604355] [drm] Initialized msm 1.13.0 for ae01000.display-controller on minor 1
+[    2.604642] msm_dpu ae01000.display-controller: [drm:adreno_request_fw [msm]] loaded qcom/a660_sqe.fw from new location
+[    2.604996] msm_dpu ae01000.display-controller: [drm:adreno_request_fw [msm]] loaded qcom/a660_gmu.bin from new location
+[    2.605901] [drm] Loaded GMU firmware v3.1.10
+[    2.672459] msm_dpu ae01000.display-controller: [drm] fb0: msmdrmfb frame buffer device
+[    2.681618] usbcore: registered new interface driver usb-storage
+[    2.686284] usbcore: registered new interface driver uas
+[   12.771481] platform 33c0000.pinctrl: deferred probe pending: qcom-sc8280xp-lpass-lpi-pinctrl: Failed to get clk 'core'
+[   12.771523] gpu_cc-sc8280xp 3d90000.clock-controller: sync_state() pending due to 3d6a000.gmu
+[   12.771591] qcom-rpmhpd 18200000.rsc:power-controller: sync_state() pending due to aa00000.video-codec
+[   57.755349] systemd[1]: Starting modprobe@drm.service - Load Kernel Module drm...
+[   57.760045] systemd[1]: systemd-hibernate-clear.service - Clear Stale Hibernate Storage Info was skipped because of an unmet condition check (ConditionPathExists=/sys/firmware/efi/efivars/HibernateLocation-UUID_REDACTED).
+[   57.770707] systemd[1]: modprobe@drm.service: Deactivated successfully.
+[   57.770886] systemd[1]: Finished modprobe@drm.service - Load Kernel Module drm.
+[   58.467438] qcom,fastrpc 2400000.remoteproc:glink-edge.fastrpcglink-apps-dsp.-1.-1: no reserved DMA memory for FASTRPC
+[   58.483486] platform 2400000.remoteproc:glink-edge:fastrpc:compute-cb@1: Adding to iommu group 11
+[   58.485897] platform 2400000.remoteproc:glink-edge:fastrpc:compute-cb@2: Adding to iommu group 12
+[   58.500922] platform 2400000.remoteproc:glink-edge:fastrpc:compute-cb@3: Adding to iommu group 13
+[   58.504101] qcom,fastrpc 1b300000.remoteproc:glink-edge.fastrpcglink-apps-dsp.-1.-1: no reserved DMA memory for FASTRPC
+[   58.529655] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@1: Adding to iommu group 14
+[   58.540556] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@2: Adding to iommu group 15
+[   58.548493] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@3: Adding to iommu group 16
+[   58.554074] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@4: Adding to iommu group 17
+[   58.573251] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@5: Adding to iommu group 18
+[   58.582571] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@6: Adding to iommu group 19
+[   58.587111] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@7: Adding to iommu group 20
+[   58.610703] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@8: Adding to iommu group 21
+[   58.614504] EDAC DEVICE0: Giving out device to module qcom_llcc_edac controller llcc: DEV qcom_llcc_edac (INTERRUPT)
+[   58.619608] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@9: Adding to iommu group 22
+[   58.625692] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@10: Adding to iommu group 22
+[   58.634310] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@11: Adding to iommu group 23
+[   58.635631] qcom-venus aa00000.video-codec: non legacy binding
+[   58.646153] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@12: Adding to iommu group 24
+[   58.651118] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@13: Adding to iommu group 25
+[   58.667481] platform 1b300000.remoteproc:glink-edge:fastrpc:compute-cb@14: Adding to iommu group 26
+[   58.722676] Bluetooth: Core ver 2.22
+[   58.723677] NET: Registered PF_BLUETOOTH protocol family
+[   58.723680] Bluetooth: HCI device and connection manager initialized
+[   58.723685] Bluetooth: HCI socket layer initialized
+[   58.723688] Bluetooth: L2CAP socket layer initialized
+[   58.723701] Bluetooth: SCO socket layer initialized
+[   58.731115] input: pmic_pwrkey as /devices/platform/soc@0/c440000.spmi/spmi-0/0-00/c440000.spmi:pmic@0:pon@1300/c440000.spmi:pmic@0:pon@1300:pwrkey/input/input17
+[   58.745743] input: pmic_resin as /devices/platform/soc@0/c440000.spmi/spmi-0/0-00/c440000.spmi:pmic@0:pon@1300/c440000.spmi:pmic@0:pon@1300:resin/input/input18
+[   58.757311] Bluetooth: HCI UART driver ver 2.3
+[   58.757318] Bluetooth: HCI UART protocol H4 registered
+[   58.757320] Bluetooth: HCI UART protocol BCSP registered
+[   58.758500] Bluetooth: HCI UART protocol LL registered
+[   58.758504] Bluetooth: HCI UART protocol ATH3K registered
+[   58.759448] Bluetooth: HCI UART protocol Three-wire (H5) registered
+[   58.760891] Bluetooth: HCI UART protocol Intel registered
+[   58.764118] Bluetooth: HCI UART protocol Broadcom registered
+[   58.764243] Bluetooth: HCI UART protocol QCA registered
+[   58.764247] Bluetooth: HCI UART protocol AG6XX registered
+[   58.765745] Bluetooth: HCI UART protocol Marvell registered
+[   58.766049] Bluetooth: HCI UART protocol AML registered
+[   58.767299] Bluetooth: hci0: setting up wcn6855
+[   58.822675] Bluetooth: hci0: QCA Product ID   :0x00000013
+[   58.822680] Bluetooth: hci0: QCA SOC Version  :0x400c0210
+[   58.822683] Bluetooth: hci0: QCA ROM Version  :0x00000201
+[   58.822685] Bluetooth: hci0: QCA Patch Version:0x000038e6
+[   58.833360] Bluetooth: hci0: QCA controller version 0x02100201
+[   58.833368] Bluetooth: hci0: QCA Downloading qca/hpbtfw21.tlv
+[   59.495430] Bluetooth: hci0: QCA Downloading qca/hpnv21.b8c
+[   59.664675] Bluetooth: hci0: QCA setup on UART is completed
+[   59.671400] Bluetooth: hci0: AOSP extensions version v0.98
+[   59.671414] Bluetooth: hci0: AOSP quality report is supported
+[   60.195667] ath11k_pci 0006:01:00.0: fw_version 0x11088c35 fw_build_timestamp 2024-04-17 08:34 fw_build_id WLAN.HSP.1.1-03125-QCAHSPSWPL_V1_V2_SILICONZ_LITE-3.6510.41
+[   60.423467] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+[   60.423473] Bluetooth: BNEP filters: protocol multicast
+[   60.423480] Bluetooth: BNEP socket layer initialized
+[   60.589089] ath11k_pci 0006:01:00.0 wlP6p1s0: renamed from wlan0
+[   63.970819] qcom-apm gprsvc:service:2:1: CMD timeout for [1001021] opcode
+[   63.971317] platform 3000000.remoteproc:glink-edge:gpr:service@1:dais: Adding to iommu group 27
+[   65.454902] Bluetooth: MGMT ver 1.23
+[   65.455209] Bluetooth: hci0: setting up wcn6855
+[   65.511892] Bluetooth: hci0: QCA Product ID   :0x00000013
+[   65.511913] Bluetooth: hci0: QCA SOC Version  :0x400c0210
+[   65.511921] Bluetooth: hci0: QCA ROM Version  :0x00000201
+[   65.511928] Bluetooth: hci0: QCA Patch Version:0x000038e6
+[   65.526666] Bluetooth: hci0: QCA controller version 0x02100201
+[   65.526688] Bluetooth: hci0: QCA Downloading qca/hpbtfw21.tlv
+[   66.202825] Bluetooth: hci0: QCA Downloading qca/hpnv21.b8c
+[   66.411749] Bluetooth: hci0: QCA setup on UART is completed
+[   66.470295] Bluetooth: hci0: AOSP extensions version v0.98
+[   66.470317] Bluetooth: hci0: AOSP quality report is supported
+[   66.493930] Bluetooth: RFCOMM TTY layer initialized
+[   66.493942] Bluetooth: RFCOMM socket layer initialized
+[   66.493951] Bluetooth: RFCOMM ver 1.11
+[  141.265129] warning: `Socket Thread' uses wireless extensions which will stop working for Wi-Fi 7 hardware; use nl80211
+[  733.558529] qcom-venus aa00000.video-codec: wait for cpu and video core idle fail (-110)
+[18598.440934] pcieport 0002:00:00.0: AER: Correctable error message received from 0002:01:00.0
+[18598.440967] nvme 0002:01:00.0: PCIe Bus Error: severity=Correctable, type=Physical Layer, (Receiver ID)
+[18598.440971] nvme 0002:01:00.0:   device [15b7:5016] error status/mask=00000001/0000e000
+[33917.432084] pcieport 0002:00:00.0: AER: Correctable error message received from 0002:01:00.0
+[33917.432116] nvme 0002:01:00.0: PCIe Bus Error: severity=Correctable, type=Physical Layer, (Receiver ID)
+[33917.432120] nvme 0002:01:00.0:   device [15b7:5016] error status/mask=00000001/0000e000
+[37009.473617] pcieport 0002:00:00.0: AER: Correctable error message received from 0002:01:00.0
+[37009.473646] nvme 0002:01:00.0: PCIe Bus Error: severity=Correctable, type=Physical Layer, (Receiver ID)
+[37009.473649] nvme 0002:01:00.0:   device [15b7:5016] error status/mask=00000001/0000e000
+[41127.886640] pcieport 0002:00:00.0: AER: Correctable error message received from 0002:01:00.0
+[41127.886671] nvme 0002:01:00.0: PCIe Bus Error: severity=Correctable, type=Physical Layer, (Receiver ID)
+[41127.886673] nvme 0002:01:00.0:   device [15b7:5016] error status/mask=00000001/0000e000
+[47248.962591] pcieport 0002:00:00.0: AER: Correctable error message received from 0002:01:00.0
+[47248.962617] nvme 0002:01:00.0: PCIe Bus Error: severity=Correctable, type=Physical Layer, (Receiver ID)
+[47248.962621] nvme 0002:01:00.0:   device [15b7:5016] error status/mask=00000001/0000e000

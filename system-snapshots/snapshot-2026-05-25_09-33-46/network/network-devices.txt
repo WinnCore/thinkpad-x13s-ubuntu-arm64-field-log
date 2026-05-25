@@ -1,0 +1,33 @@
+===== NETWORK DEVICES =====
+lo               UNKNOWN        MAC_REDACTED <LOOPBACK,UP,LOWER_UP> 
+wwan0            DOWN           <POINTOPOINT,NOARP> 
+wlP6p1s0         UP             MAC_REDACTED <BROADCAST,MULTICAST,UP,LOWER_UP> 
+lxcbr0           DOWN           MAC_REDACTED <NO-CARRIER,BROADCAST,MULTICAST,UP> 
+docker0          DOWN           MAC_REDACTED <NO-CARRIER,BROADCAST,MULTICAST,UP> 
+br-6b34659ab196  DOWN           MAC_REDACTED <NO-CARRIER,BROADCAST,MULTICAST,UP> 
+br-6ec2f436142c  DOWN           MAC_REDACTED <NO-CARRIER,BROADCAST,MULTICAST,UP> 
+br-b749e75cfaa4  DOWN           MAC_REDACTED <NO-CARRIER,BROADCAST,MULTICAST,UP> 
+
+===== NETWORK MANAGER DEVICES =====
+DEVICE            TYPE      STATE                   CONNECTION      
+wlP6p1s0          wifi      connected               ATTzzG2Gq3      
+lxcbr0            bridge    connected (externally)  lxcbr0          
+lo                loopback  connected (externally)  lo              
+br-6b34659ab196   bridge    connected (externally)  br-6b34659ab196 
+br-6ec2f436142c   bridge    connected (externally)  br-6ec2f436142c 
+br-b749e75cfaa4   bridge    connected (externally)  br-b749e75cfaa4 
+docker0           bridge    connected (externally)  docker0         
+wwan0mbim0        gsm       disconnected            --              
+p2p-dev-wlP6p1s0  wifi-p2p  disconnected            --              
+
+===== WIFI CHIP INFO FROM LSPCI/LSUSB =====
+0004:01:00.0 Wireless controller [0d40]: Foxconn International, Inc. T99W175 5G Modem [Snapdragon X55] [105b:e0c3]
+	Subsystem: Foxconn International, Inc. T99W175 5G Modem [Snapdragon X55] [105b:e0c3]
+	Kernel driver in use: mhi-pci-generic
+	Kernel modules: mhi_pci_generic
+0006:00:00.0 PCI bridge [0604]: Qualcomm Technologies, Inc SC8280XP PCI Express Root Port [17cb:010e]
+--
+0006:01:00.0 Network controller [0280]: Qualcomm Technologies, Inc QCNFA765 Wireless Network Adapter [17cb:1103] (rev 01)
+	Subsystem: Qualcomm Technologies, Inc Device [17cb:0108]
+	Kernel driver in use: ath11k_pci
+	Kernel modules: ath11k_pci

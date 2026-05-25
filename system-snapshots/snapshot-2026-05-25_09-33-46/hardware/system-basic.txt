@@ -1,0 +1,38 @@
+===== DATE =====
+Mon May 25 09:33:46 AM CDT 2026
+
+===== OS RELEASE =====
+PRETTY_NAME="Ubuntu 25.10"
+NAME="Ubuntu"
+VERSION_ID="25.10"
+VERSION="25.10 (Questing Quokka)"
+VERSION_CODENAME=questing
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=questing
+LOGO=ubuntu-logo
+
+===== UNAME =====
+Linux USER_REDACTED-ThinkPad-X13s-Gen-1 6.17.0-22-generic #22-Ubuntu SMP PREEMPT_DYNAMIC Fri Mar 13 11:59:13 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+
+===== HOSTNAMECTL =====
+ Static hostname: USER_REDACTED-ThinkPad-X13s-Gen-1
+       Icon name: computer-laptop
+         Chassis: laptop 💻
+      Machine ID: MACHINE_ID_REDACTED
+         Boot ID: 512b0648f77e4d6aba8fb8eff5001ddb
+Operating System: Ubuntu 25.10
+          Kernel: Linux 6.17.0-22-generic
+    Architecture: arm64
+ Hardware Vendor: Lenovo
+  Hardware Model: ThinkPad X13s Gen 1
+Firmware Version: N3HET88W (1.60 )
+   Firmware Date: Thu 2024-03-14
+    Firmware Age: 2y 2month 1w 4d
+
+===== ARCH =====
+aarch64

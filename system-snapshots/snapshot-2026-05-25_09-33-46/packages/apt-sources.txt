@@ -1,0 +1,31 @@
+===== APT SOURCES =====
+/etc/apt/sources.list.d/waydroid.list
+deb [signed-by=/usr/share/keyrings/waydroid.gpg] https://repo.waydro.id/ questing main
+/etc/apt/sources.list.d/metasploit-framework.list
+deb [signed-by=/usr/share/keyrings/metasploit-framework.gpg] https://downloads.metasploit.com/data/releases/metasploit-framework/apt lucid main
+/etc/apt/sources.list.d/nodesource.list
+deb [arch=arm64 signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main
+/etc/apt/sources.list.d/vscode.sources
+### THIS FILE IS AUTOMATICALLY CONFIGURED ###
+# You may comment out this entry, but any other modifications may be lost.
+Types: deb
+URIs: https://packages.microsoft.com/repos/code
+Suites: stable
+Components: main
+Architectures: arm64
+Signed-By: /usr/share/keyrings/microsoft.gpg
+/etc/apt/sources.list.d/brave-browser-release.sources
+Types: deb
+URIs: https://brave-browser-apt-release.s3.brave.com
+Suites: stable
+Components: main
+Architectures: amd64 arm64
+Signed-By: /usr/share/keyrings/brave-browser-archive-keyring.gpg
+/etc/apt/sources.list.d/ubuntu.sources
+Types: deb
+URIs: http://ports.ubuntu.com/ubuntu-ports/
+Suites: questing questing-updates questing-backports questing-security
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+/etc/apt/sources.list
+# Ubuntu sources have moved to /etc/apt/sources.list.d/ubuntu.sources
