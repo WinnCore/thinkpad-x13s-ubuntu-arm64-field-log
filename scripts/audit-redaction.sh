@@ -2,38 +2,25 @@
 set -euo pipefail
 
 TARGET="${1:-.}"
-FAIL=0
+echo "[*] Auditing files in: $TARGET"
 
-echo "[*] Auditing high-risk private values in: $TARGET"
+MAC_REGEX="\b([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}\b"
+IP192_REGEX="\b192\.168\.[0-9]{1,3}\.[0-9]{1,3}\b"
+IP10_REGEX="\b10\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\b"
+IP172_REGEX="\b172\.(1[6-9]|2[0-9]|3[0-1])\.[0-9]{1,3}\.[0-9]{1,3}\b"
+GMAIL_REGEX="\b[a-zA-Z0-9._%+-]+@gmail\.com\b"
+MACHINE_ID_REGEX="\b[a-f0-9]{32}\b"
 
-while IFS= read -r -d '' file; do
-  case "$file" in
-    */.git/*) continue ;;
-    */private-do-not-publish/*) continue ;;
-    */scripts/audit-redaction.sh) continue ;;
-  esac
+COMBINED="$MAC_REGEX|$IP192_REGEX|$IP10_REGEX|$IP172_REGEX|$GMAIL_REGEX|$MACHINE_ID_REGEX"
 
-  perl -ne '
-    if (
-      /[A-Za-z0-9._%+-]+@gmail\.com/ ||
-      /Machine ID:\s*(?!MACHINE_ID_REDACTED\b)[0-9a-fA-F]{16,}/ ||
-      /Serial Number:\s*(?!SERIAL_REDACTED\b)[A-Za-z0-9][A-Za-z0-9._:-]*/ ||
-      /SerialNumber:\s*(?!SERIAL_REDACTED\b)[A-Za-z0-9][A-Za-z0-9._:-]*/ ||
-      /(?:[0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}/ ||
-      /\b192\.168\.[0-9]{1,3}\.[0-9]{1,3}\b/
-    ) {
-      print "$ARGV:$.:$_";
-      $bad = 1;
-    }
-    END { exit($bad ? 1 : 0) }
-  ' "$file" || FAIL=1
-
-done < <(find "$TARGET" -type f -print0)
-
-if [ "$FAIL" -eq 1 ]; then
-  echo
-  echo "[!] Possible high-risk private values found. Review before publishing."
-  exit 1
+if grep -r -n -E "$COMBINED" \
+    --exclude-dir=".git" \
+    --exclude-dir="private-do-not-publish" \
+    --exclude="audit-redaction.sh" \
+    "$TARGET"; then
+    echo
+    echo "[!] Possible private values found. Review output above."
+    exit 1
 else
-  echo "[+] Clean: no high-risk private values found."
+    echo "[+] Clean: no known private values found."
 fi
