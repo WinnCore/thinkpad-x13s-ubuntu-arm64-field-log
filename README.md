@@ -747,6 +747,142 @@ Specific people should only be named if their help was public or they gave permi
 - ThinkPad Linux discussions
 - Ubuntu troubleshooting discussions
 - Qualcomm / Snapdragon Linux discussions
+# 16. GNOME / Nautilus Vulkan / Freedreno Graphics Issue
+
+## Symptoms
+
+GNOME Files / Nautilus showed repeated Vulkan-related errors while running Ubuntu on the ThinkPad X13s Gen 1 ARM64 / Snapdragon setup.
+
+Observed error pattern:
+
+```text
+org.gnome.Nautilus: Vulkan: ../src/freedreno/vulkan/tu_descriptor_set.cc:651: VK_ERROR_OUT_OF_POOL_MEMORY
+```
+
+Other desktop/session clues appeared around the same testing window:
+
+```text
+gnome-shell JS ERROR
+mutter / Wayland session messages
+wireplumber-wait-media.service failed
+/dev/media0 permission or media-device access warnings
+```
+
+## Working Theory
+
+This currently appears to be a GTK / Vulkan / Mesa / Freedreno / Turnip graphics-path issue rather than a confirmed kernel panic.
+
+The rough stack involved appears to be:
+
+```text
+GNOME Files / Nautilus
+→ GTK / GSK renderer
+→ Vulkan
+→ Mesa Turnip / Freedreno
+→ Qualcomm Adreno GPU through msm DRM
+```
+
+This does not prove the Linux kernel `msm` driver is the root cause. The current evidence points first toward the user-space graphics stack and GTK renderer path.
+
+## Important Finding
+
+`pstore` was checked and did not contain saved crash logs:
+
+```bash
+sudo ls -lah /sys/fs/pstore
+sudo cat /sys/fs/pstore/* 2>/dev/null
+```
+
+Result: no saved panic/crash data was found.
+
+That weakens the kernel-panic theory for this specific event.
+
+## Test / Workaround
+
+A test workaround is to force GTK apps away from the Vulkan renderer and use the OpenGL renderer instead:
+
+```bash
+GSK_RENDERER=gl nautilus
+```
+
+To make the setting persistent for future login sessions:
+
+```bash
+echo 'export GSK_RENDERER=gl' >> ~/.profile
+```
+
+Then log out and log back in.
+
+Verify:
+
+```bash
+echo "$GSK_RENDERER"
+```
+
+Expected output:
+
+```text
+gl
+```
+
+## Useful Log Filter
+
+```bash
+journalctl --user -b 0 --no-pager | grep -iE 'nautilus|vulkan|freedreno|VK_ERROR|gnome-shell|mutter' | tail -80
+```
+
+For a cleaner after-test check:
+
+```bash
+journalctl --user -b 0 --since "5 minutes ago" --no-pager | grep -iE 'nautilus|vulkan|freedreno|VK_ERROR|gnome-shell|mutter'
+```
+
+## Related but Separate Issues
+
+During the same session, Brave briefly showed:
+
+```text
+/opt/brave.com/brave/brave: error while loading shared libraries: libdl.so.2: cannot open shared object file
+```
+
+But later checks showed `libdl.so.2` was present:
+
+```bash
+ldd /opt/brave.com/brave/brave | grep -E 'not found|libdl'
+```
+
+So the Brave issue should be tracked separately unless it becomes reproducible.
+
+GNOME Text Editor also showed an encoding warning. That appears separate from the Vulkan/Freedreno issue.
+
+## Status
+
+Observed and partially isolated.
+
+Current working theory:
+
+* Likely: GTK Vulkan path hitting a Mesa/Freedreno/Turnip issue
+* Possible: GNOME Shell / Mutter session instability contributing
+* Also present: WirePlumber/media-device warnings
+* Not proven: kernel panic, battery failure, or direct hardware failure
+
+## Lesson
+
+Do not jump straight to kernel patching just because a graphics error appears on an ARM64 laptop.
+
+First isolate the stack:
+
+```text
+Application
+→ Toolkit
+→ Renderer
+→ Mesa driver
+→ Kernel DRM driver
+→ Hardware
+```
+
+For this case, the next disciplined step is to confirm whether `GSK_RENDERER=gl` stops new `VK_ERROR_OUT_OF_POOL_MEMORY` messages from appearing.
+
 
 ---
 
