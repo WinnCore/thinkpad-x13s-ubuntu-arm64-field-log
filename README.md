@@ -635,7 +635,6 @@ UUID_REDACTED
 Redaction scripts can produce false positives. A value like `SERIAL_REDACTED` is safe. A real serial number is not.
 
 ---
-
 # 15. Rebuild Checklist
 
 Use this if rebuilding the machine or recreating this setup.
@@ -682,7 +681,35 @@ journalctl -b -p warning --no-pager
 sudo dmesg | grep -iE "qcom|qualcomm|snapdragon|firmware|pmic|glink|dwc3|gpu|drm|wifi|camera|thermal|suspend|sleep|error|fail|warn"
 ```
 
-## 4. Check Time Sync
+## 4. Check Mesa / Freedreno Graphics Stack
+
+Use this to confirm that the system is using the expected accelerated Qualcomm/Freedreno graphics stack:
+
+```bash
+glxinfo -B
+dpkg -l | grep -Ei 'mesa|vulkan|freedreno'
+apt policy mesa-vulkan-drivers libgl1-mesa-dri
+```
+
+Expected working signs:
+
+```text
+Vendor: freedreno
+Renderer: FD690
+Direct rendering: Yes
+Accelerated: yes
+Mesa version: 25.x or newer
+```
+
+Note: A `VK_ERROR_OUT_OF_POOL_MEMORY` message from GTK/Nautilus should not automatically be treated as a kernel panic, GPU failure, or real system-wide memory exhaustion. It may be a Mesa/Freedreno/Turnip Vulkan descriptor-pool diagnostic.
+
+Relevant upstream Mesa commit:
+
+```text
+10f259e673eb — tu: Stop printing descriptor pool allocation failures
+```
+
+## 5. Check Time Sync
 
 ```bash
 timedatectl
@@ -690,7 +717,7 @@ chronyc tracking
 chronyc sources -v
 ```
 
-## 5. Check GLib / LD_LIBRARY_PATH
+## 6. Check GLib / LD_LIBRARY_PATH
 
 ```bash
 echo "$LD_LIBRARY_PATH"
@@ -698,13 +725,12 @@ env -u LD_LIBRARY_PATH flatpak --version
 find "$HOME" -name "libglib-2.0.so*" -ls 2>/dev/null
 ```
 
-## 6. Redact Before Publishing
+## 7. Redact Before Publishing
 
 ```bash
 ./scripts/audit-redaction.sh .
 ```
 
----
 
 # What Still Needs More Testing
 
@@ -723,6 +749,15 @@ find "$HOME" -name "libglib-2.0.so*" -ls 2>/dev/null
 # Credits and Acknowledgments
 
 This repository is based on hands-on troubleshooting on a Lenovo ThinkPad X13s Gen 1 ARM64 / Snapdragon laptop.
+## Acknowledgments
+
+Thanks to Reddit user `steevdave` for pointing me toward the Mesa/Freedreno source of the `VK_ERROR_OUT_OF_POOL_MEMORY` message.
+
+The relevant Mesa commit, `10f259e673eb`, was authored by Steev Klimaszewski:
+
+`tu: Stop printing descriptor pool allocation failures`
+
+This helped clarify that the descriptor-pool allocation message was likely a noisy Mesa Turnip/Freedreno Vulkan diagnostic rather than direct evidence of a kernel panic, GPU failure, or actual system-wide memory exhaustion.
 
 Thanks to the broader Linux ARM64, Ubuntu, ThinkPad Linux, Qualcomm Linux, systemd, chrony, fwupd, Mozilla Firefox, Ghidra, and open-source communities whose documentation and discussions helped guide the debugging process.
 
